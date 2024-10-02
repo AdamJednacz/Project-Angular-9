@@ -1,0 +1,108 @@
+@import "../../../mixins";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+
+
+  i {
+    font-size: 2rem;
+    color: #2455a3;
+    z-index: 1;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .open {
+
+  }
+
+  .close {
+    display: none;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2455a3;
+
+  }
+
+  .menu_container {
+    display: flex;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    position: fixed;
+    flex-direction: column;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    &.open {
+      max-height: 100vh;
+      opacity: 1;
+    }
+    @include desktop {
+      position: static;
+      max-height: none;
+      opacity: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 70%;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      @include desktop {
+        flex-direction: row;
+      }
+
+      &_item {
+        font-weight: 500;
+        color: rgba(64, 64, 64, 0.8);
+        padding: 1.5rem;
+        white-space: nowrap;
+      }
+    }
+
+    .buttons_container {
+      display: flex;
+      position: relative;
+      top: 5%;
+      @include desktop {
+        position: static;
+      }
+
+      .button {
+        border: none;
+        background: none;
+        font-weight: 500;
+        padding: 12px 24px;
+        margin: 0 8px;
+      }
+
+      .login {
+        color: #2455a3;
+      }
+
+      .register {
+        background: #2455a3;
+        color: #ffffff;
+        border-radius: 5px;
+      }
+    }
+  }
+}
