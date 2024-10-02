@@ -1,20 +1,21 @@
 <header>
   <p class="logo">MechOut</p>
-  <i class="fa-solid fa-bars" *ngIf="!isMenuOpen" (click)="toggleMenu()"></i>
-
-  <i class="fa-solid fa-x" *ngIf="isMenuOpen" (click)="toggleMenu()"></i>
-  <div class="menu_container" [ngClass]="{'open': isMenuOpen}">
-  <div class="menu">
-    <a class="menu_item">Home</a>
-    <a class="menu_item">About Us</a>
-    <a class="menu_item">Mission</a>
-    <a class="menu_item">Offer</a>
-    <a class="menu_item">Contact Us</a>
+  <div class="hamburger"  (click)="toggleMenu()" [ngClass]="{'active': isMenuOpen}">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
   </div>
-  <div class="buttons_container">
+    <div class="menu" [ngClass]="{'open': isMenuOpen}">
+      <a class="menu_item">Home</a>
+      <a class="menu_item">About Us</a>
+      <a class="menu_item">Mission</a>
+      <a class="menu_item">Offer</a>
+      <a class="menu_item">Contact Us</a>
+    </div>
+  <div class="buttons_container"  [ngClass]="{'open': isMenuOpen}">
     <button class="button login">Login</button>
     <button class="button register">Register</button>
   </div>
-  </div>
+
 
 </header>
