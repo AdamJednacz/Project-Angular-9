@@ -7,6 +7,7 @@ import {OfferComponent} from "./offer/offer.component";
 import {ContactComponent} from "./contact/contact.component";
 import {InfoBarComponent} from "./info-bar/info-bar.component";
 import {FooterComponent} from "./footer/footer.component";
+import {EmailComponent} from "./email/email.component";
 
 @Component({
   selector: 'app-layout',
@@ -19,7 +20,8 @@ import {FooterComponent} from "./footer/footer.component";
     OfferComponent,
     ContactComponent,
     InfoBarComponent,
-    FooterComponent
+    FooterComponent,
+    EmailComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'

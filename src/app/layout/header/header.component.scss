@@ -12,7 +12,7 @@ header {
   .hamburger {
     cursor: pointer;
     display: block;
-    z-index: 1;
+    z-index: 2;
     @include desktop {
       display: none;
     }
@@ -24,6 +24,7 @@ header {
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
       background: #2455a3;
+
     }
 
     &.active .bar:nth-child(2) {
@@ -53,16 +54,18 @@ header {
     text-align: center;
     position: fixed;
     opacity: 0;
+    height: 0;
     background-color: #ffffff;
     top: 0;
     left: 0;
     right: 0;
     bottom: 10%;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out,height 0.4s ease-in-out;
 
     &.open {
-
+     height: 100vh;
       opacity: 1;
+      z-index: 1;
     }
 
     @include desktop {
@@ -90,10 +93,13 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    transition: opacity 0.4s ease-in-out;
+    max-height: 0;
+    transition: opacity 0.4s ease-in-out,max-height 0.4s ease-in-out;
 
     &.open {
       opacity: 1;
+      max-height: 100vh;
+      z-index: 1;
     }
 
     @include desktop {
